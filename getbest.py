@@ -15,11 +15,15 @@ def getCols(f):
 def findTop(f,num_col, mark_col):
     ''' finds the top student in the class '''
     best = best_idx =  0
+
+    f.readline()
+
     for line in f:
         data = line.strip().split(",")
         mark = int(data[mark_col])
         if mark > best:
             best=mark
+            best_idx = data[num_col]
     return best_idx, best
 
 if __name__ == "__main__":
